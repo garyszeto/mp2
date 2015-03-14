@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   $('.slides').slick({
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 300,
     arrows: true
 
@@ -116,49 +116,6 @@ $(document).on("scroll",function(){
 });
 
 
-
-//carousel
-$(function() {
-    function changeSlide( newSlide ) {
-        currSlide = newSlide;
-        
-        if ( currSlide > maxSlide ) currSlide = 0;
-        else if ( currSlide < 0 ) currSlide = maxSlide;
-        
-        // animate the slide reel
-        $slides.animate({ left : currSlide * -$(window).width() }, 400, 'swing', function() {
-            if ( currSlide == 0 ) $leftnav.hide();
-            else $leftnav.show();
-            
-            if ( currSlide == maxSlide ) $rightnav.hide();
-            else $rightnav.show();
-        });        
-    }
-    
-    function nextSlide() {
-        changeSlide( currSlide + 1 );
-    }
-    
-    var currSlide = 0,
-    $carousel = $('#carousel'),
-    $slides = $carousel.find('#slides'),
-    maxSlide = $slides.children().length - 1,
-    $leftnav = $carousel.find('#left-button'),
-    $rightnav = $carousel.find('#right-button');
-    
-    // left arrow
-    $leftnav.click(function(ev) {
-        ev.preventDefault();     
-        changeSlide( currSlide - 1 );
-    });
-    
-    // right arrow
-    $rightnav.click(function(ev) {
-        ev.preventDefault();
-        changeSlide( currSlide + 1 );
-    });
-    
-});
 
 /*!
     SlickNav Responsive Mobile Menu v1.0.0
