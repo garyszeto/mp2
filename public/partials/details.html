@@ -2,8 +2,8 @@
 	<div class="panel">
 		<div class="row" style="text-align:center">
 			<div>
-				<h3 style="font-family:'Webly Sleek Bold'">{{dctl.curr.title}}</h3>
-				<h4 style="font-family:'Webly Sleek'">Rank: {{dctl.curr.rank}}</h4>
+				<h3 style="font-family:'Webly Sleek Bold'"><span ng-bind="dctl.curr.title"></span></h3>
+				<h4 style="font-family:'Webly Sleek'">Rank: <span ng-bind="dctl.curr.rank"></span></h4>
 				
 			</div>
 		</div>
@@ -18,16 +18,16 @@
 			</div>
 
 			<div class="large-9 columns">
-				<h4 style="font-family:'Webly Sleek'">{{dctl.curr.plot}}</h4>
+				<h4 style="font-family:'Webly Sleek'"><span ng-bind="dctl.curr.plot"></span></h4>
 				<div>					
 					<h5 style="font-family:'Webly Sleek'" style="display:inline">Actors: 
-					<span style="font-family:'Webly Sleek'" ng-repeat="actor in dctl.curr.actors" style="display:inline">| {{actor}} |</span></h5>
+					<span style="font-family:'Webly Sleek'" ng-repeat="actor in dctl.curr.actors" style="display:inline">| <span ng-bind="actor"></span> |</span></h5>
 
 				</div>
-				<h5 style="font-family:'Webly Sleek'">Released: {{dctl.curr.released}}</h5>
-				<h5 style="font-family:'Webly Sleek'">Rated: {{dctl.curr.rated}}</h5>
-				<h5 style="font-family:'Webly Sleek'">Runtime: {{dctl.curr.runtime}}</h5>
-				<h5 style="font-family:'Webly Sleek'">Awards: {{dctl.curr.awards}}</h5>
+				<h5 style="font-family:'Webly Sleek'">Released: <span ng-bind="dctl.curr.released"></span></h5>
+				<h5 style="font-family:'Webly Sleek'">Rated: <span ng-bind="dctl.curr.rated"></span></h5>
+				<h5 style="font-family:'Webly Sleek'">Runtime: <span ng-bind="dctl.curr.runtime"></span></h5>
+				<h5 style="font-family:'Webly Sleek'">Awards: <span ng-bind="dctl.curr.awards"></span></h5>
 
 			</div>
 			

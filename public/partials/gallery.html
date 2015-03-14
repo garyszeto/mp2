@@ -5,7 +5,7 @@
 			<li ng-repeat="genre in gctl.genreList">
 				<!-- <input type="submit" value="{{genre}}" ng-model="gctl.selectedGenre"> -->
 				<!-- <a href="" class="button">{{genre}}</a> -->
-				<input type="radio" value="{{genre}}" ng-model="gctl.selectedGenre"><label>{{genre}}</label>
+				<input type="radio" value="{{genre}}" ng-model="gctl.selectedGenre"><label><span ng-bind="genre"></span></label>
 				<!-- <button value="{{genre}}" ng-model="gctl.selectedGenre" class="button">{{genre}}</button> -->
 			</li>
 		</ul>
