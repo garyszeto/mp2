@@ -1,14 +1,262 @@
 @import url('http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather');
-@import url('http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css');
+@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 
-h1 {
-  font-size: 2.2rem;
-  color: lighten($orange, 25);
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('./BebasNeue.otf');
 }
 
-.test {
-  font-size: 1.2rem;
-  color: $blue;
+@font-face {
+	font-family: 'Webly Sleek';
+	src: url('./weblysleekuil_0.ttf');
+}
+
+@font-face {
+	font-family: 'Webly Sleek Bold';
+	src: url('./weblysleekuisb_0.ttf');
+}
+
+#index {
+	//navbar
+
+	ul{ float: right; }
+	li{ display: inline; float: left;}
+	img.logo{float: left; }
+	nav{ width: 960px; margin: 0 auto;} 
+
+	header{ background: #FFFFFF; border-bottom: 1px solid #aaaaaa; float: left; width: 100%; position: fixed; z-index: 10; }
+	header a{ color: #969696; text-decoration: none; text-transform: uppercase; font-size: 1em; }
+	header a.active, header a:hover{ color: #3d3d3d; }
+	header li{ margin-right: 30px; }
+	.active-nav {
+		color: $color4;
+	}
+
+	header.large{ height: 77px; }
+	header.large img{ width: 70px; height: 70px; padding-top:3px;}
+	header.large li{ margin-top: 35px; }
+
+	header.small{ height: 69px; }
+	header.small img{ width: 60px; height: 60px; padding-top:4px;}
+	header.small li{ margin-top: 30px; }
+
+	header,nav, a, img, li{
+		@include nav_transition();
+	}
+
+	.slicknav_menu {
+		display:none;
+	}
+
+	@media only screen and (min-width: 52em){
+		#menu {display: none;}
+	}
+
+	@media only screen and (max-width: 52em){
+		.dnav {display: none;}
+		.slicknav_menu {
+			display:block;
+		}
+	}
+
+	section {
+		text-align:center;
+		width: 100%;
+		background: $color5;
+	}
+
+	#home {
+	background: url('../data/images/hk.jpg') fixed no-repeat;
+	background-size: cover;
+	height: 1080px;
+	position:relative;
+	img {
+		left:50%;
+		transform:translateX(-50%);
+		top:35%;
+		position:absolute;
+	}
+}
+	#art {
+		background:$color1;
+	}
+
+	#arttitle {
+		color: $color5;
+	}
+
+	.modal {
+	  background-color: rgba(#222222, 0.9);
+	  cursor: pointer;
+	  height: 100%;
+	  left: 0;
+	  overflow-y: scroll;
+	  padding: 24px;
+	  position: fixed;
+	  text-align: center;
+	  top: 0;
+	  width: 100%;
+	  z-index: 99999;
+	  img {
+	    box-shadow: 0 0 6px 3px #333;
+	    z-index: 100000;
+	  }
+	}
+
+	.no-scroll {
+	  overflow: hidden;
+	}
+
+	//video
+	.video-bg video {
+		right: 0;
+	    left: auto;
+	    visibility: visible;
+	    width: 100%;
+	    overflow-y: hidden;
+	    position:relative;
+	    z-index:0;
+	}
+
+	.video-bg.video-loaded {
+	    background-image: none;
+	}
+
+	.video-bg.playing video {
+	    opacity: 0.7;
+	}
+
+
+	.video-bg {
+		background-image: url("img/kproject.jpg");
+	    height: 100%;
+	    box-sizing: border-box;
+	    background-position: right top;
+	    position:relative;
+	}
+
+	// .align-vert {
+	//     top:50%;
+	//     transform: translateY(-50%);
+	// }
+
+	// .align-horiz {
+	//     left:50%;
+	//     transform: translateX(-50%);
+	// }
+
+	#work {
+		background-color: $color1;
+	}
+
+	#slidestrip {
+		border: 1px solid $color4;
+		width: 69px;
+		margin: 20px auto;
+
+	}
+
+
+	body {
+		background-color: #FCFCFC;
+	}
+
+	.content {
+	//	padding-top:90px;
+		text-align:center;
+	}
+
+
+	.heading {
+		text-transform: uppercase;
+		text-align:center;
+	}
+
+	//typography settings
+
+	h1 {
+	  font-size: 2.9rem;
+	  color: $color2;
+	}
+
+	.sub {
+	  font-size: 1.7rem;
+	  color: $color3;
+	}
+
+	#strip {
+		border: 1px solid $color1;
+		width: 69px;
+		margin: 20px auto;
+
+	}
+
+	footer a {
+		text-decoration: none;
+	}
+
+	.fa-facebook-official {
+		color: $facebookblue;
+	}
+
+	.fa-github {
+		color: $color1;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+	@include list_transition();
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:300px;
 }
 

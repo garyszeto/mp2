@@ -117,6 +117,15 @@ $include-html-global-classes: $include-html-classes;
 // $jet         : #222222;
 // $black       : #000000;
 
+$facebookblue	: #3B5998;
+
+//palette
+$color1			: #373737;
+$color2			: #8DB986;
+$color3			: #ACCE91;
+$color4			: #BADB73;
+$color5			: #EFEAE4;
+
 // We use these as default colors throughout
 // $primary-color: #008CBA;
 // $secondary-color: #e7e7e7;
@@ -208,7 +217,7 @@ $include-html-global-classes: $include-html-classes;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
+$h1-font-size: 2.9em;
 // $h2-font-size: rem-calc(37);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);

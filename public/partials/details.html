@@ -1,0 +1,37 @@
+<section ngAnimate="'details'" class="row">
+	<div class="panel">
+		<div class="row" style="text-align:center">
+			<div>
+				<h3 style="font-family:'Webly Sleek Bold'">{{dctl.curr.title}}</h3>
+				<h4 style="font-family:'Webly Sleek'">Rank: {{dctl.curr.rank}}</h4>
+				
+			</div>
+		</div>
+		<div class="row">
+			<a href="#/details/{{dctl.prevRank}}" title=""><i class="fa fa-arrow-circle-left fa-2x" style="float:left"></i></a>
+			<a href="#/details/{{dctl.nextRank}}" title=""><i class="fa fa-arrow-circle-right fa-2x" style="float:right"></i></a>
+		</div>
+		<div class="row">
+			<div class="large-3 columns">
+				<img src="./data/images/{{ dctl.curr.imdbID }}.jpg" width="100%">
+				
+			</div>
+
+			<div class="large-9 columns">
+				<h4 style="font-family:'Webly Sleek'">{{dctl.curr.plot}}</h4>
+				<div>					
+					<h5 style="font-family:'Webly Sleek'" style="display:inline">Actors: 
+					<span style="font-family:'Webly Sleek'" ng-repeat="actor in dctl.curr.actors" style="display:inline">| {{actor}} |</span></h5>
+
+				</div>
+				<h5 style="font-family:'Webly Sleek'">Released: {{dctl.curr.released}}</h5>
+				<h5 style="font-family:'Webly Sleek'">Rated: {{dctl.curr.rated}}</h5>
+				<h5 style="font-family:'Webly Sleek'">Runtime: {{dctl.curr.runtime}}</h5>
+				<h5 style="font-family:'Webly Sleek'">Awards: {{dctl.curr.awards}}</h5>
+
+			</div>
+			
+		</div>
+
+	</div>
+</section>

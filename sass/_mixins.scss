@@ -1,0 +1,14 @@
+@mixin list_transition() {
+	-webkit-transition:all linear 0.5s;
+	-moz-transition: all linear 0.5s;
+	-ms-transition: all linear 0.5s;
+	-o-transition: all linear 0.5s;
+	transition:all linear 0.5s;
+}
+
+@mixin nav_transition() {
+	  transition: all .3s;
+	  -moz-transition: all .3s; /* Firefox 4 */
+	  -webkit-transition: all .3s; /* Safari and Chrome */
+	  -o-transition: all .3s; /* Opera */
+}

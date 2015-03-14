@@ -1,0 +1,26 @@
+<section class="row">
+
+	<div>
+		<ul class="button-group even-7">
+			<li ng-repeat="genre in gctl.genreList">
+				<!-- <input type="submit" value="{{genre}}" ng-model="gctl.selectedGenre"> -->
+				<!-- <a href="" class="button">{{genre}}</a> -->
+				<input type="radio" value="{{genre}}" ng-model="gctl.selectedGenre"><label>{{genre}}</label>
+				<!-- <button value="{{genre}}" ng-model="gctl.selectedGenre" class="button">{{genre}}</button> -->
+			</li>
+		</ul>
+
+	</div>
+	<div>
+	
+		<ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+			<li class="animate-repeat" ng-repeat="movie in gctl.movieInfo | filter: { genre: gctl.selectedGenre} | orderBy : gctl.sortCrit">
+				<a href="#/details/{{movie.rank}}" title="">
+						<img src="./data/images/{{ movie.imdbID }}.jpg" >
+						
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</section>

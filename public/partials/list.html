@@ -1,0 +1,41 @@
+<section class="row">
+	<!-- <h1>{{lctl.genreList}}</h1> -->
+
+
+	<form>
+		<input type="text" placeholder="Search" ng-model="lctl.search">
+		<label>Sort By</label>
+		<input type="radio" ng-model="lctl.sortCrit" value="title"> <label>Title</label>
+		<input type="radio" ng-model="lctl.sortCrit" value="rank"> <label>Rank</label>
+
+		<label>Order</label>
+		<input type="radio" ng-model="lctl.reverse" value=""> <label>Ascending</label>
+		<input type="radio" ng-model="lctl.reverse" value="true"> <label>Descending</label>
+
+	</form>
+
+	<div>
+		<!-- <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4"> -->
+		<ul>
+			<li ng-repeat="movie in lctl.movieInfo | filter: { title: lctl.search} | orderBy: lctl.sortCrit : lctl.reverse" class="animate-repeat panel" >
+				<a href="#/details/{{movie.rank}}" title="">
+					<div class="row">
+						<div class="large-2 columns">
+							<img src="./data/images/{{ movie.imdbID }}.jpg" width="100%">
+							
+						</div>
+						<div class="large-8 columns">
+							<h2>{{movie.title}}</h2>
+							<h3>Rank: {{movie.rank}}</h3>
+						</div>
+						
+					</div>
+				</a>
+			</li>
+			<li class="animate-repeat" ng-if="results.length == 0">
+		      <strong>No results found...</strong>
+		    </li>
+		</ul>
+	</div>
+
+</section>
